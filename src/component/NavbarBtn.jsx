@@ -13,7 +13,9 @@ function NavbarBtn() {
           <li>
             <Link to={"/"}>Home</Link>
           </li>
-          <li><Link to={'/create-event'}>Create Event</Link></li>
+          <li>
+            <Link to={"/create-event"}>Create Event</Link>
+          </li>
           <li>Location</li>
         </ul>
       </div>

@@ -22,11 +22,11 @@ function Attendees() {
         alt="attend"
         className="rounded-full h-7 w-7 border border-white brightness-75 mr-[-10px]"
       />
-      <img
-        src={attend4}
-        alt="attend"
-        className="rounded-full h-7 w-7 border border-white brightness-75 mr-[-10px]"
-      />
+
+      <div className="relative rounded-full h-7 w-7 border overflow-hidden border-white brightness-75 mr-[-10px]">
+        <img src={attend4} alt="attend" className="w-full"/>
+        <div className="absolute bg-[#FF890099] top-0 h-full w-full text-xs flex items-center justify-center">62+</div>
+      </div>
     </div>
   );
 }
