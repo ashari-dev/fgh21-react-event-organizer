@@ -1,8 +1,8 @@
 import React from "react";
 import imgEvent from "../assets/img/event1.png";
-
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Attendees from "./Attendees";
+import { Link } from "react-router-dom";
 
 function EventHome() {
   return (
@@ -34,67 +34,22 @@ function EventHome() {
         </div>
       </div>
       <div className="flex w-full pl-24 gap-5 overflow-x-auto">
-        {/*wrapper*/}
-        <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
-          <img
-            src={imgEvent}
-            alt="Event"
-            className="w-auto h-[435px] absolute brightness-50"
-          />
-          <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
-            <div className="text-sm font-semibold">Wed, 15 Nov, 4:00 PM</div>
-            <div className="text-2xl font-bold">Sights & Sounds Exhibition</div>
-            <Attendees />
+        <Link to={"/event"}>
+          <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
+            <img
+              src={imgEvent}
+              alt="Event"
+              className="w-auto h-[435px] absolute brightness-50"
+            />
+            <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
+              <div className="text-sm font-semibold">Wed, 15 Nov, 4:00 PM</div>
+              <div className="text-2xl font-bold">
+                Sights & Sounds Exhibition
+              </div>
+              <Attendees />
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
-          <img
-            src={imgEvent}
-            alt="Event"
-            className="w-auto h-[435px] absolute brightness-50"
-          />
-          <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
-            <div className="text-sm font-semibold">Wed, 15 Nov, 4:00 PM</div>
-            <div className="text-2xl font-bold">Sights & Sounds Exhibition</div>
-            <Attendees />
-          </div>
-        </div>
-        <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
-          <img
-            src={imgEvent}
-            alt="Event"
-            className="w-auto h-[435px] absolute brightness-50"
-          />
-          <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
-            <div className="text-sm font-semibold">Wed, 15 Nov, 4:00 PM</div>
-            <div className="text-2xl font-bold">Sights & Sounds Exhibition</div>
-            <Attendees />
-          </div>
-        </div>
-        <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
-          <img
-            src={imgEvent}
-            alt="Event"
-            className="w-auto h-[435px] absolute brightness-50"
-          />
-          <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
-            <div className="text-sm font-semibold">Wed, 15 Nov, 4:00 PM</div>
-            <div className="text-2xl font-bold">Sights & Sounds Exhibition</div>
-            <Attendees />
-          </div>
-        </div>
-        <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
-          <img
-            src={imgEvent}
-            alt="Event"
-            className="w-auto h-[435px] absolute brightness-50"
-          />
-          <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
-            <div className="text-sm font-semibold">Wed, 15 Nov, 4:00 PM</div>
-            <div className="text-2xl font-bold">Sights & Sounds Exhibition</div>
-            <Attendees />
-          </div>
-        </div>
+        </Link>
       </div>
       <div className="flex gap-8">
         <button className="h-11 w-11 rounded-xl text-[#C1C5D0] justify-center flex items-center shadow-md">

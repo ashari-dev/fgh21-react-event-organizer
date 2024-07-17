@@ -5,6 +5,7 @@ import imgEvent from "../assets/img/event1.png";
 import maps from "../assets/img/maps.png";
 import { FaClock, FaLocationDot, FaRegHeart } from "react-icons/fa6";
 import Attendees from "../component/Attendees";
+import { Link } from "react-router-dom";
 
 function Event() {
   return (
@@ -66,9 +67,9 @@ function Event() {
               <img src={maps} alt="MAPS"  className="w-full"/>
               </div>
             </div>
-            <div>
+            <Link to={'/booking'}>
             <button className="bg-[#3366FF] h-14 w-[315px] rounded-2xl text-white font-bold shadow-xl">Payment</button>
-            </div>
+            </Link>
           </div>
         </div>
         <Footer />

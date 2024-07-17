@@ -3,6 +3,7 @@ import NavbarUser from "../component/NavbarUser";
 import Footer from "../component/Footer";
 import stage from "../assets/img/stage.png";
 import { FaArrowRightArrowLeft, FaTicketSimple } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Booking() {
   return (
@@ -121,11 +122,11 @@ function Booking() {
                 Total Payment<span className="text-[#3355ff]">$70</span>
               </div>
             </div>
-            <div>
+            <Link to={'/payment'}>
               <button className="bg-[#3366ff] h-12 w-[315px] rounded-2xl text-white font-bold shadow-xl">
                 Checkout
               </button>
-            </div>
+            </Link>
           </div>
         </div>
         <Footer />

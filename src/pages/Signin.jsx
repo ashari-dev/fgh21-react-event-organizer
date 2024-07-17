@@ -2,8 +2,22 @@ import React from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa6";
 import Logo from "../component/Logo";
 import imgHeader from "../assets/img/hero.png";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
+  const navigation = useNavigate();
+  function processLogin(e) {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (email === "admin@mail.com" && password === "1234") {
+      navigation("/");
+    } else {
+      alert("data anda salah");
+    }
+  }
+
   return (
     <div className="flex">
       <div className="flex-1 flex justify-center items-center bg-[#3366FF]">
@@ -18,16 +32,7 @@ function Signin() {
           <h4 className="text-xs">Hi, Welcome back to Urticket! </h4>
         </div>
         <div className="w-[315px]">
-          <form className="flex flex-col gap-3">
-            <div>
-              <input
-                className="border rounded-2xl h-12 w-full pl-5 text-[#C1C5D0]"
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Username"
-              />
-            </div>
+          <form onSubmit={processLogin} className="flex flex-col gap-3">
             <div>
               <input
                 className="border rounded-2xl h-12 w-full pl-5 text-[#C1C5D0]"

@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import jhon from "../assets/img/jhon.png"
+import { Link } from "react-router-dom";
 
 function NavbarUser() {
   return (
@@ -10,17 +11,20 @@ function NavbarUser() {
       </div>
       <div>
         <ul className="flex gap-5 font-bold text-[#373A42]">
-          <li>Home</li>
-          <li>Create Event</li>
+          <li>
+          <Link to={'/'}>Home</Link>
+          </li>
+          <li><Link to={'/create-event'}>Create Event</Link></li>
+
           <li>Location</li>
         </ul>
       </div>
-      <div className="flex items-center gap-2 ">
+      <Link to={'/edit-profile'} className="flex items-center gap-2 ">
       <div className="h-12 rounded-full border-2 border-[#3366FF] overflow-hidden">
         <img src={jhon} alt="Profile" className="h-12 w-auto"/>
       </div>
       <div className="text-[#373A42] font-bold text-sm">Jhon Tomson</div>
-      </div>
+      </Link>
     </div>
   );
 }
