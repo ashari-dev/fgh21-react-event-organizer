@@ -1,5 +1,5 @@
-import React from "react";
-import { FaFacebook, FaGoogle } from "react-icons/fa6";
+import React, { useState } from "react";
+import { FaEye, FaFacebook, FaGoogle } from "react-icons/fa6";
 import Logo from "../component/Logo";
 import imgHeader from "../assets/img/hero.png";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +18,14 @@ function Signin() {
     }
   }
 
+  const [pass, setPass] = useState("password");
+  function showPassword() {
+    if (pass === 'password') {
+      setPass('text')
+    }else{
+      setPass('password')
+    }
+  }
   return (
     <div className="flex">
       <div className="flex-1 flex justify-center items-center bg-[#3366FF]">
@@ -42,14 +50,17 @@ function Signin() {
                 placeholder="Email"
               />
             </div>
-            <div>
+            <div className="flex border rounded-2xl overflow-hidden bg-white pr-3">
               <input
-                className="border rounded-2xl h-12 w-full pl-5 text-[#C1C5D0]"
-                type="password"
+                className=" h-12 w-full pl-5 text-[#C1C5D0] outline-none"
+                type={pass}
                 name="password"
                 id="password"
                 placeholder="Password"
               />
+              <button type="button" onClick={showPassword}>
+                <FaEye />
+              </button>
             </div>
             <div className="text-[#3366FF] font-bold text-end">
               Forget Password ?

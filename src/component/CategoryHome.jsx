@@ -23,8 +23,8 @@ function Category() {
         <button className="h-11 w-11 rounded-xl text-[#C1C5D0] justify-center flex items-center shadow-md">
           <FaArrowLeft />
         </button>
-        <div className="flex gap-5">
-          <div className="h-[350px] w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative">
+        <div className="flex gap-5 max-w-[940px] overflow-x-scroll">
+          <div className="h-[350px] flex-shrink-0 w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative ">
             <img src={imgEvent} alt="Event" className="absolute bottom-40" />
             <div className="relative flex flex-col text-white p-5 justify-end h-full gap-5">
               <Attendees className="absolute" />
@@ -34,7 +34,7 @@ function Category() {
               </div>
             </div>
           </div>
-          <div className="h-[350px] w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative">
+          <div className="h-[350px] flex-shrink-0 w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative">
             <img src={imgEvent} alt="Event" className="absolute bottom-40" />
             <div className="relative flex flex-col text-white p-5 justify-end h-full gap-5">
               <Attendees className="absolute" />
@@ -44,7 +44,17 @@ function Category() {
               </div>
             </div>
           </div>
-          <div className="h-[350px] w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative">
+          <div className="h-[350px] flex-shrink-0 w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative">
+            <img src={imgEvent} alt="Event" className="absolute bottom-40" />
+            <div className="relative flex flex-col text-white p-5 justify-end h-full gap-5">
+              <Attendees className="absolute" />
+              <div className="text-sm font-semibold">Wed, 15 Nov, 4:00 PM</div>
+              <div className="text-2xl font-bold">
+                Sights & Sounds Exhibition
+              </div>
+            </div>
+          </div>
+          <div className="h-[350px] flex-shrink-0 w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative">
             <img src={imgEvent} alt="Event" className="absolute bottom-40" />
             <div className="relative flex flex-col text-white p-5 justify-end h-full gap-5">
               <Attendees className="absolute" />

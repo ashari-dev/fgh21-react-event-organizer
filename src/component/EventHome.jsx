@@ -45,7 +45,7 @@ function EventHome() {
   ];
   return (
     <section className="flex flex-col items-center gap-10">
-      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold before:content-['']">
+      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold">
         Event
       </div>
       <div className="text-4xl font-bold">Events For You</div>
@@ -82,12 +82,8 @@ function EventHome() {
                   className="w-auto h-[435px] absolute brightness-50"
                 />
                 <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
-                  <div className="text-sm font-semibold">
-                    {i.time}
-                  </div>
-                  <div className="text-2xl font-bold">
-                    {i.title}
-                  </div>
+                  <div className="text-sm font-semibold">{i.time}</div>
+                  <div className="text-2xl font-bold">{i.title}</div>
                   <Attendees />
                 </div>
               </div>
