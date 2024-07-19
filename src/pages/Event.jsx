@@ -1,27 +1,27 @@
 import React from "react";
-import NavbarUser from "../component/NavbarUser";
 import Footer from "../component/Footer";
 import imgEvent from "../assets/img/event1.png";
 import maps from "../assets/img/maps.png";
 import { FaClock, FaLocationDot, FaRegHeart } from "react-icons/fa6";
 import Attendees from "../component/Attendees";
 import { Link } from "react-router-dom";
+import NavbarBtn from "../component/NavbarBtn";
 
 function Event() {
   return (
     <div>
-      <NavbarUser />
+      <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
-        <div className="flex mx-28 my-12 p-24 bg-white rounded-3xl">
-          <div className="flex-1 flex flex-col gap-5 items-center">
+        <div className="flex flex-col gap-5 md:gap-0 md:flex-row md:mx-28 md:my-12 my-5 md:p-24 p-10 bg-white rounded-3xl">
+          <div className="md:flex-1 flex flex-col gap-5 items-center relative">
             <img
               src={imgEvent}
               alt="Event"
               className="rounded-3xl brightness-50 shadow-2xl"
             />
-            <div className="flex items-center gap-3">
-              <FaRegHeart className="text-[#C1C5D0] text-3xl" />
-              <span className="text-xl font-bold text-[#373A42]">
+            <div className="flex absolute md:relative top-10 right-8 items-center gap-3">
+              <FaRegHeart className=" text-white md:text-[#C1C5D0] text-3xl" />
+              <span className="text-xl font-bold hidden md:block md:text-[#373A42]">
                 Add to Wishlist
               </span>
             </div>
@@ -30,7 +30,7 @@ function Event() {
             <div className="text-2xl text-[#373A42] font-bold">
               Sights & Sounds Exhibition
             </div>
-            <div className="flex justify-between">
+            <div className="flex flex-col gap-5 md:flex-row md:gap-0 justify-between">
               <div className="flex items-center gap-3">
                 <FaLocationDot className="text-[#FC1055]" />
                 <span className="font-semibold text-[#373A42]">
@@ -63,12 +63,12 @@ function Event() {
             </div>
             <div className="flex flex-col gap-3">
               <h3 className="text-xl text-[#373A42] font-bold">Location</h3>
-              <div className="h-36 w-[350px] overflow-hidden rounded-3xl">
+              <div className="h-36 md:w-[350px] max-w-[350px] overflow-hidden rounded-3xl">
               <img src={maps} alt="MAPS"  className="w-full"/>
               </div>
             </div>
             <Link to={'/booking'}>
-            <button className="bg-[#3366FF] h-14 w-[315px] rounded-2xl text-white font-bold shadow-xl">Payment</button>
+            <button className="bg-[#3366FF] h-14 md:w-[315px] w-full rounded-2xl text-white font-bold shadow-xl">Payment</button>
             </Link>
           </div>
         </div>

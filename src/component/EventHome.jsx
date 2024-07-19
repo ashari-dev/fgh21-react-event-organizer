@@ -4,45 +4,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Attendees from "./Attendees";
 import { Link } from "react-router-dom";
 
-function EventHome() {
-  const data = [
-    {
-      id: 1,
-      title: "Festivals 2014",
-      time: "Wed, 15 Nov, 4:00 PM",
-      img: "https://i.pinimg.com/564x/b6/5b/66/b65b66e5707e73d032773d74c1d7479f.jpg",
-    },
-    {
-      id: 2,
-      title: "Jurassic Park",
-      time: "Wed, 16 Nov, 3:00 PM",
-      img: "https://i.pinimg.com/564x/7b/bc/e1/7bbce19e94374f86ea924476dae005f7.jpg",
-    },
-    {
-      id: 3,
-      title: "Eat The World",
-      time: "Wed, 16 Nov, 4:00 PM",
-      img: "https://i.pinimg.com/564x/0f/4e/56/0f4e563789c7e3a6395ae333f6d7df54.jpg",
-    },
-    {
-      id: 4,
-      title: "Festivals 2014",
-      time: "Wed, 15 Nov, 4:00 PM",
-      img: "https://i.pinimg.com/564x/b6/5b/66/b65b66e5707e73d032773d74c1d7479f.jpg",
-    },
-    {
-      id: 5,
-      title: "Jurassic Park",
-      time: "Wed, 16 Nov, 3:00 PM",
-      img: "https://i.pinimg.com/564x/7b/bc/e1/7bbce19e94374f86ea924476dae005f7.jpg",
-    },
-    {
-      id: 6,
-      title: "Eat The World",
-      time: "Wed, 16 Nov, 4:00 PM",
-      img: "https://i.pinimg.com/564x/0f/4e/56/0f4e563789c7e3a6395ae333f6d7df54.jpg",
-    },
-  ];
+function EventHome(props) {
   return (
     <section className="flex flex-col items-center gap-10">
       <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold">
@@ -50,7 +12,7 @@ function EventHome() {
       </div>
       <div className="text-4xl font-bold">Events For You</div>
       <div className="flex gap-14 text-[#C1C5D0]">
-        <div className="p-2 flex flex-col gap-1 items-center text-sm font-semibold">
+        <div className="hidden p-2 md:flex flex-col gap-1 items-center text-sm font-semibold">
           <h3>13</h3>
           <span>Mon</span>
         </div>
@@ -66,13 +28,13 @@ function EventHome() {
           <h3>16</h3>
           <span>Thu</span>
         </div>
-        <div className="p-2 flex flex-col gap-1 items-center text-sm font-semibold">
+        <div className="hidden p-2 md:flex flex-col gap-1 items-center text-sm font-semibold">
           <h3>17</h3>
           <span>Fri</span>
         </div>
       </div>
-      <div className="flex w-full pl-24 gap-5 overflow-x-auto">
-        {data.map((i) => {
+      <div className="flex w-full md:pl-24 px-10 gap-5 overflow-x-scroll">
+        {props.data.map((i) => {
           return (
             <Link to={"/event"} key={`event-${i.id}`}>
               <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">

@@ -29,19 +29,19 @@ function Sidebar() {
       <div>
         <ul className="flex flex-col gap-8">
           <li className="flex gap-6">
-            <FaUser className="text-[#C1C5D0]" />
-            <span className="text-[#373A42] font-semibold text-sm">
+            <FaUser className="text-[#C1C5D0] " />
+            <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">
               Profile
             </span>
           </li>
           <li className="flex gap-6 pl-8">
             <FaCreditCard className="text-[#C1C5D0]" />
-            <span className="text-[#373A42] font-semibold text-sm">Card</span>
+            <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">Card</span>
           </li>
-          <Link to={"/edit-profile"}>
-            <li className="flex gap-6 pl-8">
+          <Link to={"/edit-profile"} >
+            <li className="flex gap-6 pl-8 ">
               <FaPen className="text-[#C1C5D0]" />
-              <span className="text-[#373A42] font-semibold text-sm">
+              <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">
                 Edit Profile
               </span>
             </li>
@@ -49,7 +49,7 @@ function Sidebar() {
           <Link to={"/change-password"}>
             <li className="flex gap-6 pl-8">
               <FaUnlock className="text-[#C1C5D0]" />
-              <span className="text-[#373A42] font-semibold text-sm">
+              <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">
                 Change Password
               </span>
             </li>
@@ -57,7 +57,7 @@ function Sidebar() {
           <Link to={'/create-event'}>
           <li className="flex gap-6">
             <FaCirclePlus className="text-[#C1C5D0]" />
-            <span className="text-[#373A42] font-semibold text-sm">
+            <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">
               Create Event
             </span>
           </li>
@@ -65,7 +65,7 @@ function Sidebar() {
           <Link to={'/my-booking'}>
           <li className="flex gap-6">
             <FaListUl className="text-[#C1C5D0]" />
-            <span className="text-[#373A42] font-semibold text-sm">
+            <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">
               My Booking
             </span>
           </li>
@@ -73,20 +73,20 @@ function Sidebar() {
           <Link to={'/my-wishlist'}>
           <li className="flex gap-6">
             <FaHeart className="text-[#C1C5D0]" />
-            <span className="text-[#373A42] font-semibold text-sm">
+            <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">
               My Wishlist
             </span>
           </li>
           </Link>
           <li className="flex gap-6">
             <FaGear className="text-[#C1C5D0]" />
-            <span className="text-[#373A42] font-semibold text-sm">
+            <span className="text-[#373A42] font-semibold text-sm hover:text-[#3366ff]">
               Settings
             </span>
           </li>
           <li className="flex gap-6 text-red-600">
             <FaArrowUpFromBracket />
-            <span className="font-semibold text-sm">Logout</span>
+            <span className="font-semibold text-sm hover:text-[#3366ff]">Logout</span>
           </li>
         </ul>
       </div>

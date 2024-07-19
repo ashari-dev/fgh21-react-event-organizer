@@ -11,7 +11,7 @@ function Partner() {
       <div className="rounded-full bg-[#FFFFFF40] px-10 text-white font-semibold">Partner</div>
       <div className="text-4xl font-bold text-white">Our Trusted Partners</div>
       <div className="text-[#C1C5D0] text-xs">By companies like :</div>
-      <div className="flex gap-10">
+      <div className="flex gap-10 flex-wrap items-center">
         <img src={img1} alt="Partner" />
         <img src={img2} alt="Partner" />
         <img src={img3} alt="Partner" />

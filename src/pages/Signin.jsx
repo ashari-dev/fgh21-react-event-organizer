@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaEye, FaFacebook, FaGoogle } from "react-icons/fa6";
+import { FaEye, FaEyeSlash, FaFacebook, FaGoogle } from "react-icons/fa6";
 import Logo from "../component/Logo";
 import imgHeader from "../assets/img/hero.png";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,6 @@ function Signin() {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-
     if (email === "admin@mail.com" && password === "1234") {
       navigation("/");
     } else {
@@ -19,19 +18,25 @@ function Signin() {
   }
 
   const [pass, setPass] = useState("password");
+  const [icon, setIcon] = useState(<FaEyeSlash />);
   function showPassword() {
-    if (pass === 'password') {
-      setPass('text')
-    }else{
-      setPass('password')
+    if (pass === "password") {
+      setPass("text");
+      setIcon(<FaEye />);
+    }
+  }
+  function hiddenPassword() {
+    if (pass === "text") {
+      setPass("password");
+      setIcon(<FaEyeSlash />);
     }
   }
   return (
     <div className="flex">
-      <div className="flex-1 flex justify-center items-center bg-[#3366FF]">
+      <div className=" flex-1 md:flex justify-center items-center bg-[#3366FF] ">
         <img src={imgHeader} alt="img" className="h-auto w-auto" />
       </div>
-      <div className="flex flex-col gap-12 pt-52 pb-52 pl-20 pr-20">
+      <div className="flex flex-col w-full md:w-[500px] gap-12 pt-52 pb-52 pl-20 pr-20">
         <div>
           <Logo />
         </div>
@@ -39,11 +44,11 @@ function Signin() {
           <h2 className="text-2xl font-bold">Sign in</h2>
           <h4 className="text-xs">Hi, Welcome back to Urticket! </h4>
         </div>
-        <div className="w-[315px]">
+        <div className="md:w-[350px]">
           <form onSubmit={processLogin} className="flex flex-col gap-3">
             <div>
               <input
-                className="border rounded-2xl h-12 w-full pl-5 text-[#C1C5D0]"
+                className="border outline-none rounded-2xl h-12 w-full pl-5 text-[#C1C5D0]"
                 type="email"
                 name="email"
                 id="email"
@@ -58,8 +63,8 @@ function Signin() {
                 id="password"
                 placeholder="Password"
               />
-              <button type="button" onClick={showPassword}>
-                <FaEye />
+              <button type="button" onMouseDown={showPassword} onMouseUp={hiddenPassword}>
+                {icon}
               </button>
             </div>
             <div className="text-[#3366FF] font-bold text-end">

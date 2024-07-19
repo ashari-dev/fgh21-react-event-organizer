@@ -1,13 +1,39 @@
 import React from "react";
-import NavbarUser from "../component/NavbarUser";
 import Footer from "../component/Footer";
 import Sidebar from "../component/Sidebar";
 import { FaRegHeart } from "react-icons/fa6";
+import NavbarBtn from "../component/NavbarBtn";
 
 function MyWishlist() {
+  const data = [
+    {
+      id: 1,
+      title: "Festivals terbaru fariq 2014",
+      time: "Wed, 15 Nov, 4:00 PM",
+      location: "Jakarta, indonesia",
+    },
+    {
+      id: 2,
+      title: "Jurassic Park",
+      time: "Wed, 16 Nov, 3:00 PM",
+      location: "Bandung, Indonesia",
+    },
+    {
+      id: 3,
+      title: "Eat The World",
+      time: "Wed, 17 Nov, 4:00 PM",
+      location: "Semarang, Indonesia",
+    },
+    {
+      id: 4,
+      title: "Festivals 2014",
+      time: "Wed, 15 Nov, 4:00 PM",
+      location: "Bali, Indonesia",
+    },
+  ];
   return (
     <div>
-      <NavbarUser />
+      <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
         <div className="p-12 flex gap-12">
           <Sidebar className="flex-1" />
@@ -15,78 +41,34 @@ function MyWishlist() {
             <div className="text-xl font-bold flex justify-between items-center">
               My Wishlist
             </div>
-            <div className="pb-5">
-              <div className="flex gap-8">
-                <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
-                  15
-                  <span className="text-xs text-[#C1C5D0] font-normal">
-                    Wed
-                  </span>
-                </div>
-                <div className="flex flex-col gap-3 w-full">
-                  <h2 className="flex justify-between border-b-2 w-full text-2xl font-semibold text-[#373A42]">
-                    Sights & Sounds Exhibition
-                    <FaRegHeart className="text-[#3366ff]" />
-                  </h2>
-                  <div className="flex flex-col gap-2">
-                    <span className="text-xs text[#373A42BF]">
-                      Jakarta, Indonesia
-                    </span>
-                    <span className="text-xs text[#373A42BF]">
-                      Wed, 15 Nov, 4:00 PM
-                    </span>
+            {data.map((i) => {
+              return (
+                <div className="pb-5">
+                  <div className="flex gap-8">
+                    <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
+                      15
+                      <span className="text-xs text-[#C1C5D0] font-normal">
+                        Wed
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-3 w-full">
+                      <h2 className="flex justify-between border-b-2 w-full text-2xl font-semibold text-[#373A42]">
+                        {i.title}
+                        <FaRegHeart className="text-[#3366ff]" />
+                      </h2>
+                      <div className="flex flex-col gap-2">
+                        <span className="text-xs text[#373A42BF]">
+                          {i.location}
+                        </span>
+                        <span className="text-xs text[#373A42BF]">
+                          {i.time}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="pb-5">
-              <div className="flex gap-8">
-                <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
-                  15
-                  <span className="text-xs text-[#C1C5D0] font-normal">
-                    Wed
-                  </span>
-                </div>
-                <div className="flex flex-col gap-3 w-full">
-                  <h2 className="flex justify-between border-b-2 w-full text-2xl font-semibold text-[#373A42]">
-                    Sights & Sounds Exhibition
-                    <FaRegHeart className="text-[#3366ff]" />
-                  </h2>
-                  <div className="flex flex-col gap-2">
-                    <span className="text-xs text[#373A42BF]">
-                      Jakarta, Indonesia
-                    </span>
-                    <span className="text-xs text[#373A42BF]">
-                      Wed, 15 Nov, 4:00 PM
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="pb-5">
-              <div className="flex gap-8">
-                <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
-                  15
-                  <span className="text-xs text-[#C1C5D0] font-normal">
-                    Wed
-                  </span>
-                </div>
-                <div className="flex flex-col gap-3 w-full">
-                  <h2 className="flex justify-between border-b-2 w-full text-2xl font-semibold text-[#373A42]">
-                    Sights & Sounds Exhibition
-                    <FaRegHeart className="text-[#3366ff]" />
-                  </h2>
-                  <div className="flex flex-col gap-2">
-                    <span className="text-xs text[#373A42BF]">
-                      Jakarta, Indonesia
-                    </span>
-                    <span className="text-xs text[#373A42BF]">
-                      Wed, 15 Nov, 4:00 PM
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
         <Footer />

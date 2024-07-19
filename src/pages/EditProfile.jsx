@@ -1,15 +1,15 @@
 import React from "react";
-import NavbarUser from "../component/NavbarUser";
 import Footer from "../component/Footer";
 import Sidebar from "../component/Sidebar";
 import { FaCamera } from "react-icons/fa6";
 import jhon from "../assets/img/jhon.png";
+import NavbarBtn from "../component/NavbarBtn";
 
 
 function EditProfile() {
   return (
     <div>
-      <NavbarUser />
+      <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
         <div className="p-12 flex gap-12">
           <Sidebar className='flex-1'/>

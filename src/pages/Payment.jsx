@@ -1,5 +1,4 @@
 import React from "react";
-import NavbarUser from "../component/NavbarUser";
 import Footer from "../component/Footer";
 import atmCatd from "../assets/img/atm-card.png";
 import {
@@ -10,13 +9,14 @@ import {
   FaDollarSign,
   FaShop,
 } from "react-icons/fa6";
+import NavbarBtn from "../component/NavbarBtn";
 
 function Payment() {
   return (
     <div>
-      <NavbarUser />
+      <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
-        <div className="flex mx-28 my-12 p-24 bg-white rounded-3xl">
+        <div className="flex flex-col gap-5 md:gap-0 md:flex-row md:mx-28 md:my-12 my-5 md:p-24 p-10 bg-white rounded-3xl">
           <div className="flex-1 flex flex-col gap-5 ">
             <div className="text-xl font-bold text-[#373A42]">
               Payment Method
@@ -65,7 +65,7 @@ function Payment() {
               </div>
             </div>
           </div>
-          <div className="flex-1 flex flex-col gap-8 pl-24 border-l">
+          <div className="flex-1 flex flex-col gap-8 md:pl-24 md:border-l border-t md:border-t-0 pt-10 md:pt-0">
             <div className="text-xl font-bold text-[#373A42]">
               Ticket Detail
             </div>

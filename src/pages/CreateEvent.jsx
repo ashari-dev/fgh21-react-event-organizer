@@ -1,23 +1,50 @@
 import React from "react";
-import NavbarUser from "../component/NavbarUser";
 import Footer from "../component/Footer";
 import Sidebar from "../component/Sidebar";
+import NavbarBtn from "../component/NavbarBtn";
 
 function CreateEvent() {
   function modalCreate() {
     const modal = document.getElementById("modal");
     modal.classList.toggle("hidden");
   }
-  function bagas(e){
-    e.stopPropagation()
+  function bagas(e) {
+    e.stopPropagation();
   }
   function modalCreate2() {
     modal.classList.toggle("hidden");
   }
 
+  const data = [
+    {
+      id: 1,
+      title: "Festivals terbaru fariq 2014",
+      time: "Wed, 15 Nov, 4:00 PM",
+      location: "Jakarta, indonesia",
+    },
+    {
+      id: 2,
+      title: "Jurassic Park",
+      time: "Wed, 16 Nov, 3:00 PM",
+      location: "Bandung, Indonesia",
+    },
+    {
+      id: 3,
+      title: "Eat The World",
+      time: "Wed, 17 Nov, 4:00 PM",
+      location: "Semarang, Indonesia",
+    },
+    {
+      id: 4,
+      title: "Festivals 2014",
+      time: "Wed, 15 Nov, 4:00 PM",
+      location: "Bali, Indonesia",
+    },
+  ];
+
   return (
     <div>
-      <NavbarUser />
+      <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
         <div className="p-12 flex gap-12">
           <Sidebar className="flex-1" />
@@ -31,34 +58,38 @@ function CreateEvent() {
                 Create
               </button>
             </div>
-            <div className="border-b-2 pb-5">
-              <div className="flex gap-8">
-                <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
-                  15
-                  <span className="text-xs text-[#C1C5D0] font-normal">
-                    Wed
-                  </span>
-                </div>
-                <div className="flex flex-col gap-3">
-                  <h2 className="text-2xl font-semibold text-[#373A42]">
-                    Sights & Sounds Exhibition
-                  </h2>
-                  <div className="flex flex-col gap-2">
-                    <span className="text-xs text[#373A42BF]">
-                      Jakarta, Indonesia
-                    </span>
-                    <span className="text-xs text[#373A42BF]">
-                      Wed, 15 Nov, 4:00 PM
-                    </span>
-                    <div className="flex gap-3">
-                      <a className="text-xs text-[#3366ff] mt-1">Detail</a>
-                      <a className="text-xs text-[#3366ff] mt-1">Update</a>
-                      <a className="text-xs text-[#3366ff] mt-1">Delete</a>
+            {data.map((i) => {
+              return (
+                <div className="border-b-2 pb-5">
+                  <div className="flex gap-8">
+                    <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
+                      15
+                      <span className="text-xs text-[#C1C5D0] font-normal">
+                        Wed
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <h2 className="text-2xl font-semibold text-[#373A42]">
+                        {i.title}
+                      </h2>
+                      <div className="flex flex-col gap-2">
+                        <span className="text-xs text[#373A42BF]">
+                          {i.location}
+                        </span>
+                        <span className="text-xs text[#373A42BF]">
+                          {i.time}
+                        </span>
+                        <div className="flex gap-3">
+                          <a className="text-xs text-[#3366ff] mt-1">Detail</a>
+                          <a className="text-xs text-[#3366ff] mt-1">Update</a>
+                          <a className="text-xs text-[#3366ff] mt-1">Delete</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
         <Footer />
@@ -68,7 +99,10 @@ function CreateEvent() {
         id="modal"
         className="h-full w-full bg-[#00000047] absolute top-0 hidden"
       >
-        <div onClick={bagas} className="bg-white p-16 m-20 rounded-3xl flex flex-col gap-10">
+        <div
+          onClick={bagas}
+          className="bg-white p-16 m-20 rounded-3xl flex flex-col gap-10"
+        >
           <h2 className="text-xl font-semibold">Create Event</h2>
           <form className="grid grid-cols-2 gap-x-14 gap-y-6">
             <div className="flex flex-col gap-2">

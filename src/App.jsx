@@ -10,6 +10,7 @@ import ChangePassword from "./pages/ChangePassword";
 import MyBooking from "./pages/MyBooking";
 import MyWishlist from "./pages/MyWishlist";
 import CreateEvent from "./pages/CreateEvent";
+import Signup from "./pages/Signup";
 
 const route = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const route = createBrowserRouter([
   {
     path: "/login",
     element: <Signin />,
+  },
+  {
+    path: "/register",
+    element: <Signup />,
   },
   {
     path: "/event",

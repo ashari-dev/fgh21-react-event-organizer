@@ -25,7 +25,7 @@ function Attendees() {
 
       <div className="relative rounded-full h-7 w-7 border overflow-hidden border-white brightness-75 mr-[-10px]">
         <img src={attend4} alt="attend" className="w-full"/>
-        <div className="absolute bg-[#FF890099] top-0 h-full w-full text-xs flex items-center justify-center">62+</div>
+        <div className="absolute bg-[#FF890099] top-0 h-full w-full text-xs flex items-center justify-center "><span className='text-white'>62+</span> </div>
       </div>
     </div>
   );
