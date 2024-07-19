@@ -1,8 +1,8 @@
 import React from "react";
-import NavbarUser from "../component/NavbarUser";
 import Footer from "../component/Footer";
 import Sidebar from "../component/Sidebar";
 import { FaCalendar } from "react-icons/fa6";
+import NavbarBtn from "../component/NavbarBtn";
 
 function MyBooking() {
   const data = [
@@ -33,9 +33,9 @@ function MyBooking() {
   ];
   return (
     <div>
-      <NavbarUser />
+      <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
-        <div className="p-12 flex gap-12">
+        <div className="p-5 md:p-12 flex gap-12 md:flex-row flex-col">
           <Sidebar className="flex-1" />
           <div className="bg-white p-16 rounded-3xl flex-1 w-full flex flex-col gap-12 ">
             <div className="text-xl font-bold flex justify-between items-center">

@@ -8,9 +8,9 @@ function ChangePassword() {
     <div>
       <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
-        <div className="p-12 flex gap-12">
+        <div className="p-5 md:p-12 flex gap-12 md:flex-row flex-col">
           <Sidebar className="flex-1" />
-          <div className="bg-white p-16 rounded-3xl flex-1 w-full flex flex-col gap-12">
+          <div className="bg-white p-5 md:p-16 rounded-3xl flex-1 w-full flex flex-col gap-12">
             <div className="text-xl font-bold">Change Password</div>
             <div className="flex">
               <form className="flex-1 pr-10 flex flex-col gap-10">

@@ -46,7 +46,7 @@ function CreateEvent() {
     <div>
       <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
-        <div className="p-12 flex gap-12">
+        <div className="p-5 md:p-12 flex gap-12 md:flex-row flex-col">
           <Sidebar className="flex-1" />
           <div className="bg-white p-16 rounded-3xl flex-1 w-full flex flex-col gap-12 ">
             <div className="text-xl font-bold flex justify-between items-center">
@@ -97,14 +97,14 @@ function CreateEvent() {
       <div
         onClick={modalCreate2}
         id="modal"
-        className="h-full w-full bg-[#00000047] absolute top-0 hidden"
+        className="md:h-full w-full bg-[#00000047] absolute top-0 hidden"
       >
         <div
           onClick={bagas}
           className="bg-white p-16 m-20 rounded-3xl flex flex-col gap-10"
         >
           <h2 className="text-xl font-semibold">Create Event</h2>
-          <form className="grid grid-cols-2 gap-x-14 gap-y-6">
+          <form className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-6">
             <div className="flex flex-col gap-2">
               <label className="text-[#373A42] text-sm" htmlFor="name">
                 Name
@@ -177,7 +177,7 @@ function CreateEvent() {
                 className="h-[55px] border pl-6 rounded-2xl"
               />
             </div>
-            <div className="flex flex-col gap-2 col-span-2">
+            <div className="flex flex-col gap-2 md:col-span-2">
               <label className="text-[#373A42] text-sm" htmlFor="detail">
                 Detail
               </label>
@@ -188,8 +188,8 @@ function CreateEvent() {
                 placeholder="input detail"
               ></textarea>
             </div>
-            <div className="col-span-2 flex justify-end">
-              <button className="h-[61px] w-[315px] bg-[#3366ff] rounded-2xl text-white font-semibold shadow-xl">
+            <div className="md:col-span-2 flex md:justify-end">
+              <button className="h-[61px] w-full md:w-[315px] bg-[#3366ff] rounded-2xl text-white font-semibold shadow-xl">
                 Save
               </button>
             </div>

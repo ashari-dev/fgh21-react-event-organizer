@@ -3,6 +3,7 @@ import jhon from "../assets/img/jhon.png";
 
 import {
   FaArrowUpFromBracket,
+  FaBars,
   FaCirclePlus,
   FaCreditCard,
   FaGear,
@@ -17,14 +18,19 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="flex flex-col gap-10">
+      <div className="flex justify-between">
       <div className="flex items-center gap-3">
-        <div className="img h-[55px] w-[55px] bg-[#3366ff] rounded-full overflow-hidden border-[#3366ff] border-2">
-          <img src={jhon} alt="Profile" className="" />
+        <div className="flex items-center justify-center h-[55px] w-[55px]  rounded-full overflow-hidden border-[#3366ff] border-2">
+          <img src={jhon} alt="Profile" className="h-auto w-[45px] rounded-full" />
         </div>
         <h3 className="flex flex-col text-sm font-bold gap-1">
           jhon Tomson
           <span className="text-xs font-normal">Entrepreneur, ID</span>
         </h3>
+      </div>
+      <button className="md:hidden"> 
+      <FaBars/>
+      </button>
       </div>
       <div>
         <ul className="flex flex-col gap-8">

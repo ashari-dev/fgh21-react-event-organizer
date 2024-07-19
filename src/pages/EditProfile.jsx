@@ -11,11 +11,11 @@ function EditProfile() {
     <div>
       <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
-        <div className="p-12 flex gap-12">
+        <div className="p-5 md:p-12 flex gap-12 md:flex-row flex-col">
           <Sidebar className='flex-1'/>
           <div className="bg-white p-16 rounded-3xl flex-1 w-full flex flex-col gap-12">
             <div className="text-xl font-bold">Profile</div>
-            <div className="flex">
+            <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-0">
               <form className="flex-1 pr-10 flex flex-col gap-10">
                 <table className="w-full">
                   <tr>
@@ -55,7 +55,7 @@ function EditProfile() {
                       <span className="text-sm text-[#373A42]">Gender</span>
                     </td>
                     <td  className="h-[55px] rounded-xl w-full text-sm text-[#C1C5D0] flex gap-3 items-center mt-3">
-                      <input type="radio" name="gender" id="male" /> <label htmlFor="male">Male</label>
+                      <input type="radio" name="gender" id="male" checked/> <label htmlFor="male">Male</label>
                       <input type="radio" name="gender" id="female" /> <label htmlFor="female">Female</label>
                     </td>
                   </tr>
@@ -91,16 +91,16 @@ function EditProfile() {
                   </tr>
                 </table>
                 <div>
-                <button className="h-[60px] w-[315px] font-semibold text-white bg-[#3366ff] rounded-2xl shadow-xl">Save</button>
+                <button className="h-[60px] md:w-[315px] w-full font-semibold text-white bg-[#3366ff] rounded-2xl shadow-xl">Save</button>
                 </div>
               </form>
               <div>
-              <div className="border-l-2 px-20 flex items-center flex-col gap-6">
-                <div className="overflow-hidden border-4 border-[#3366ff] h-[137px] w-[137px] rounded-full bg-[#3366ff] flex justify-center items-center brightness-50">
-                  <img src={jhon} alt="Profile" />
-                  <FaCamera className="text-2xl text-white absolute" />
+              <div className="md:border-l-2 px-20 flex items-center flex-col gap-6">
+                <div className="overflow-hidden border-4 border-[#3366ff] h-[137px] w-[137px] rounded-full  flex justify-center items-center ">
+                  <img src={jhon} alt="Profile" className="h-auto w-[115px] rounded-full brightness-50" />
+                  <FaCamera className="text-2xl text-white absolute " />
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="hidden md:flex flex-col gap-5">
                   <button className="h-[40px] border-2 border-[#3366ff] rounded-xl w-full text-[#3366ff] text-sm font-semibold">
                     Choose Photo
                   </button>
