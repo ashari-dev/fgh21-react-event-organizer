@@ -6,7 +6,7 @@ import Attendees from "./Attendees";
 function Category(props) {
   return (
     <section className="flex flex-col items-center gap-10 pt-20">
-      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold">
+      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold flex before:content-['\2014'] gap-1">
         Category
       </div>
       <div className="text-4xl font-bold">Browse Events By Category</div>
@@ -31,8 +31,10 @@ function Category(props) {
                 className="h-[350px] flex-shrink-0 w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative "
               >
                 <img src={i.img} alt="Event" className="absolute bottom-40" />
-                <div className="relative flex flex-col text-white p-5 justify-end h-full gap-5">
-                  <Attendees className="absolute" />
+                <div className="absolute top-1/2 left-5" >
+                  <Attendees />
+                </div>
+                <div className="flex flex-col text-white pl-5 pb-5 justify-end h-full gap-5">
                   <div className="text-sm font-semibold">
                     {i.time}
                   </div>

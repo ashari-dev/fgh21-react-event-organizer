@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import jhon from "../assets/img/jhon.png";
 
 import {
@@ -16,6 +16,10 @@ import {
 import { Link } from "react-router-dom";
 
 function Sidebar() {
+  const menu = useRef()
+  function sidebarHidden() {
+    menu.current.classList.toggle('hidden')
+  }
   return (
     <div className="flex flex-col gap-10">
       <div className="flex justify-between">
@@ -28,11 +32,11 @@ function Sidebar() {
           <span className="text-xs font-normal">Entrepreneur, ID</span>
         </h3>
       </div>
-      <button className="md:hidden"> 
+      <button className="md:hidden" onClick={sidebarHidden}> 
       <FaBars/>
       </button>
       </div>
-      <div>
+      <div ref={menu}>
         <ul className="flex flex-col gap-8">
           <li className="flex gap-6">
             <FaUser className="text-[#C1C5D0] " />

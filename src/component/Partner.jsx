@@ -8,7 +8,7 @@ import img6 from "../assets/img/pt6.png";
 function Partner() {
   return (
     <section className="bg-[#373A42] bg-[url('../assets/img/bg3.png')] bg-no-repeat bg-cover flex flex-col gap-10 items-center py-20">
-      <div className="rounded-full bg-[#FFFFFF40] px-10 text-white font-semibold">Partner</div>
+      <div className="rounded-full bg-[#FFFFFF40] px-10 text-white font-semibold flex before:content-['\2014'] gap-1">Partner</div>
       <div className="text-4xl font-bold text-white">Our Trusted Partners</div>
       <div className="text-[#C1C5D0] text-xs">By companies like :</div>
       <div className="flex gap-10 flex-wrap items-center">

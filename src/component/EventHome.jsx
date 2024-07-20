@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function EventHome(props) {
   return (
     <section className="flex flex-col items-center gap-10">
-      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold">
+      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold flex before:content-['\2014'] gap-1">
         Event
       </div>
       <div className="text-4xl font-bold">Events For You</div>
