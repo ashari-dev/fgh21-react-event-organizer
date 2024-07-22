@@ -16,30 +16,30 @@ function CreateEvent() {
   }
 
   const data = [
-    {
-      id: 1,
-      title: "Festivals terbaru fariq 2014",
-      time: "Wed, 15 Nov, 4:00 PM",
-      location: "Jakarta, indonesia",
-    },
-    {
-      id: 2,
-      title: "Jurassic Park",
-      time: "Wed, 16 Nov, 3:00 PM",
-      location: "Bandung, Indonesia",
-    },
-    {
-      id: 3,
-      title: "Eat The World",
-      time: "Wed, 17 Nov, 4:00 PM",
-      location: "Semarang, Indonesia",
-    },
-    {
-      id: 4,
-      title: "Festivals 2014",
-      time: "Wed, 15 Nov, 4:00 PM",
-      location: "Bali, Indonesia",
-    },
+    // {
+    //   id: 1,
+    //   title: "Festivals terbaru 2014",
+    //   time: "Wed, 15 Nov, 4:00 PM",
+    //   location: "Jakarta, indonesia",
+    // },
+    // {
+    //   id: 2,
+    //   title: "Jurassic Park",
+    //   time: "Wed, 16 Nov, 3:00 PM",
+    //   location: "Bandung, Indonesia",
+    // },
+    // {
+    //   id: 3,
+    //   title: "Eat The World",
+    //   time: "Wed, 17 Nov, 4:00 PM",
+    //   location: "Semarang, Indonesia",
+    // },
+    // {
+    //   id: 4,
+    //   title: "Festivals 2014",
+    //   time: "Wed, 15 Nov, 4:00 PM",
+    //   location: "Bali, Indonesia",
+    // },
   ];
 
   return (
@@ -58,7 +58,7 @@ function CreateEvent() {
                 Create
               </button>
             </div>
-            {data.map((i) => {
+            {data.length >0 ? data.map((i) => {
               return (
                 <div className="border-b-2 pb-5">
                   <div className="flex gap-8">
@@ -89,7 +89,12 @@ function CreateEvent() {
                   </div>
                 </div>
               );
-            })}
+            }) : (
+              <div className="h-full w-full flex flex-col gap-5 items-center justify-center">
+                <div className="text-2xl font-semibold">No tickets bought</div>
+                <div className="w-[50%] flex text-[#B3B8B8] text-md text-center">It appears you haven’t bought any tickets yet. Maybe try searching these?</div>
+              </div>
+            )}
           </div>
         </div>
         <Footer />

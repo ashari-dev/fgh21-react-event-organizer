@@ -8,7 +8,7 @@ function MyBooking() {
   const data = [
     {
       id: 1,
-      title: "Festivals terbaru fariq 2014",
+      title: "Festivals terbaru 2014",
       time: "Wed, 15 Nov, 4:00 PM",
       location: "Jakarta, indonesia",
     },
@@ -45,34 +45,42 @@ function MyBooking() {
                 March
               </button>
             </div>
-            {data.map((i) => {
-              return (
-                <div className="border-b-2 pb-5">
-                  <div className="flex gap-8">
-                    <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
-                      15
-                      <span className="text-xs text-[#C1C5D0] font-normal">
-                        Wed
-                      </span>
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <h2 className="text-2xl font-semibold text-[#373A42]">
-                        {i.title}
-                      </h2>
-                      <div className="flex flex-col gap-2">
-                        <span className="text-xs text[#373A42BF]">
-                          {i.location}
+            {data.length > 0 ? (
+              data.map((i) => {
+                return (
+                  <div className="border-b-2 pb-5">
+                    <div className="flex gap-8">
+                      <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
+                        15
+                        <span className="text-xs text-[#C1C5D0] font-normal">
+                          Wed
                         </span>
-                        <span className="text-xs text[#373A42BF]">
-                          {i.time}
-                        </span>
-                        <a className="text-xs text-[#3366ff] mt-1">Detail</a>
+                      </div>
+                      <div className="flex flex-col gap-3">
+                        <h2 className="text-2xl font-semibold text-[#373A42]">
+                          {i.title}
+                        </h2>
+                        <div className="flex flex-col gap-2">
+                          <span className="text-xs text[#373A42BF]">
+                            {i.location}
+                          </span>
+                          <span className="text-xs text[#373A42BF]">
+                            {i.time}
+                          </span>
+                          <a className="text-xs text-[#3366ff] mt-1">Detail</a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })
+            ) : (
+              <div className="h-full w-full flex flex-col gap-5 items-center justify-center">
+                <div className="text-2xl font-semibold">No tickets bought</div>
+                <div className="w-[50%] flex text-[#B3B8B8] text-md text-center">It appears you haven’t bought any tickets yet. Maybe try searching these?</div>
+              </div>
+            )}
+            {}
           </div>
         </div>
         <Footer />

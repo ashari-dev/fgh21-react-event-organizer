@@ -10,6 +10,7 @@ import {
   FaShop,
 } from "react-icons/fa6";
 import NavbarBtn from "../component/NavbarBtn";
+import { Link } from "react-router-dom";
 
 function Payment() {
   return (
@@ -28,21 +29,29 @@ function Payment() {
                   <FaCreditCard className="text-[#884DFF]" />
                 </div>
                 <div className="flex items-center justify-between w-[60%] ">
-                  <span className="font-semibold text-sm text-[#373A42]">Card</span> <FaChevronUp className="text-[#979797]"/>
+                  <span className="font-semibold text-sm text-[#373A42]">
+                    Card
+                  </span>{" "}
+                  <FaChevronUp className="text-[#979797]" />
                 </div>
               </div>
               <div className="flex ml-[5%] items-center gap-8 mt-[-20px]">
-              <img src={atmCatd} alt="atm" className="w-auto"/>
-              <button className="h-11 w-11 border-2 border-[#3366ff] border-dashed rounded-xl text-[#3366ff] text-3xl " >+</button>
+                <img src={atmCatd} alt="atm" className="w-auto" />
+                <button className="h-11 w-11 border-2 border-[#3366ff] border-dashed rounded-xl text-[#3366ff] text-3xl ">
+                  +
+                </button>
               </div>
-              
+
               <div className="flex gap-5">
                 <input type="radio" />
                 <div className="h-11 w-11 bg-[#FC105533] rounded-lg flex items-center justify-center">
                   <FaBuildingColumns className="text-[#FC1055]" />
                 </div>
                 <div className="flex items-center justify-between w-[60%]">
-                  <span className="font-semibold text-sm text-[#373A42]">Bank Transfer</span> <FaChevronDown className="text-[#979797]"/>
+                  <span className="font-semibold text-sm text-[#373A42]">
+                    Bank Transfer
+                  </span>{" "}
+                  <FaChevronDown className="text-[#979797]" />
                 </div>
               </div>
               <div className="flex gap-5">
@@ -51,7 +60,10 @@ function Payment() {
                   <FaShop className="text-[#FF8900]" />
                 </div>
                 <div className="flex items-center justify-between w-[60%]">
-                  <span className="font-semibold text-sm text-[#373A42]">Retail</span> <FaChevronDown className="text-[#979797]"/>
+                  <span className="font-semibold text-sm text-[#373A42]">
+                    Retail
+                  </span>{" "}
+                  <FaChevronDown className="text-[#979797]" />
                 </div>
               </div>
               <div className="flex gap-5">
@@ -60,7 +72,10 @@ function Payment() {
                   <FaDollarSign className="text-[#3366FF]" />
                 </div>
                 <div className="flex items-center justify-between w-[60%]">
-                  <span className="font-semibold text-sm text-[#373A42]">E-Money</span> <FaChevronDown className="text-[#979797]"/>
+                  <span className="font-semibold text-sm text-[#373A42]">
+                    E-Money
+                  </span>{" "}
+                  <FaChevronDown className="text-[#979797]" />
                 </div>
               </div>
             </div>
@@ -86,9 +101,11 @@ function Payment() {
                 Total Payment<span className="text-[#3366ff]">$70</span>
               </h3>
             </div>
-            <button className="bg-[#3366ff] rounded-2xl h-14 shadow-xl font-semibold text-white">
-              Payment
-            </button>
+            <Link to={"/my-booking"} className="w-full">
+              <button className="bg-[#3366ff] rounded-2xl h-14 w-full shadow-xl font-semibold text-white">
+                Payment
+              </button>
+            </Link>
           </div>
         </div>
         <Footer />

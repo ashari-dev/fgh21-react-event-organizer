@@ -11,7 +11,7 @@ function Home() {
   const data = [
     {
       id: 1,
-      title: "Festivals terbaru fariq 2014",
+      title: "Festivals terbaru 2014",
       time: "Wed, 15 Nov, 4:00 PM",
       img: "https://i.pinimg.com/564x/b6/5b/66/b65b66e5707e73d032773d74c1d7479f.jpg",
     },

@@ -47,6 +47,21 @@ function Booking() {
     setVvip((a) => a - 1);
   }
 
+  let section = [];
+  if (reg > 0) {
+    section.push(`REG : ${reg}`);
+  }
+  if (vip > 0) {
+    section.push(`VIP : ${vip}`);
+  }
+  if (vvip > 0) {
+    section.push(`VVIP : ${vvip}`);
+  }
+
+  let dataSection = "";
+  section.length > 0
+    ? (dataSection = section.join(" || "))
+    : (dataSection = "-");
   return (
     <div>
       <NavbarBtn />
@@ -173,18 +188,14 @@ function Booking() {
             <div className="flex flex-col gap-4">
               <div className="text-sm font-bold flex justify-between text-[#373A42]">
                 Ticket Section
-                <span className="text-[#3355ff]">
-                  {reg === 0 && vip === 0 && vvip === 0
-                    ? "-"
-                    : `Reg(${reg}), VIP(${vip}), VVIP(${vvip})`}
-                </span>
+                <span className="text-[#3355ff]">{dataSection}</span>
               </div>
               <div className="text-sm font-bold flex justify-between text-[#373A42]">
                 Quantity
                 <span className="text-[#3355ff]">
                   {reg === 0 && vip === 0 && vvip === 0
                     ? "-"
-                    : `nama ${reg * 4}`}
+                    : `${reg + vip + vvip}`}
                 </span>
               </div>
               <div className="text-sm font-bold flex justify-between text-[#373A42]">
