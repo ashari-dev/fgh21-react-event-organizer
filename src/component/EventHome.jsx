@@ -36,17 +36,26 @@ function EventHome(props) {
       <div className="flex w-full md:pl-24 px-10 gap-5 overflow-x-scroll">
         {props.data.map((i) => {
           return (
-            <Link to={"/event"} key={`event-${i.id}`}>
+            <Link to={"/event/"} key={i.id}>
               <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
                 <img
-                  src={i.img}
-                  alt="Event"
+                  src={"https://api-dummy.fahrul.id/" + i.picture}
+                  alt={i.name}
                   className="w-auto h-[435px] absolute brightness-50"
                 />
                 <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
                   <div className="text-sm font-semibold">{i.time}</div>
                   <div className="text-2xl font-bold">{i.title}</div>
-                  <Attendees />
+                  {/* <Attendees  /> */}
+                  <div className="flex">
+                  {i.attendees.map((attend) => {
+                    return (
+                      <div key={attend.id} className="relative rounded-full h-7 w-7 border overflow-hidden border-white mr-[-10px]">
+                        <img src={"https://api-dummy.fahrul.id/" + attend.picture} alt="attend" className="w-full" />
+                      </div>
+                    );
+                  })}
+                  </div>
                 </div>
               </div>
             </Link>

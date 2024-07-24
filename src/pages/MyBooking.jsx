@@ -48,7 +48,7 @@ function MyBooking() {
             {data.length > 0 ? (
               data.map((i) => {
                 return (
-                  <div className="border-b-2 pb-5">
+                  <div key={i.id} className="border-b-2 pb-5">
                     <div className="flex gap-8">
                       <div className="flex flex-col h-[75px] w-[50px] justify-center shadow items-center rounded-2xl text-sm text-[#FF8900] font-semibold ">
                         15

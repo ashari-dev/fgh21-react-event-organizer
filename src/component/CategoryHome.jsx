@@ -30,9 +30,18 @@ function Category(props) {
                 key={`event-${i.id}`}
                 className="h-[350px] flex-shrink-0 w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative "
               >
-                <img src={i.img} alt="Event" className="absolute bottom-40" />
+                <img src={"https://api-dummy.fahrul.id/" + i.picture} alt="Event" className="absolute bottom-40 w-full" />
                 <div className="absolute top-1/2 left-5" >
-                  <Attendees />
+                  {/* <Attendees /> */}
+                  <div className="flex">
+                  {i.attendees.map((attend) => {
+                    return (
+                      <div key={attend.id} className="relative rounded-full h-7 w-7 border overflow-hidden border-white mr-[-10px]">
+                        <img src={"https://api-dummy.fahrul.id/" + attend.picture} alt="attend" className="w-full" />
+                      </div>
+                    );
+                  })}
+                  </div>
                 </div>
                 <div className="flex flex-col text-white pl-5 pb-5 justify-end h-full gap-5">
                   <div className="text-sm font-semibold">

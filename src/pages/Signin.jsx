@@ -3,18 +3,39 @@ import { FaEye, FaEyeSlash, FaFacebook, FaGoogle } from "react-icons/fa6";
 import Logo from "../component/Logo";
 import imgHeader from "../assets/img/hero.png";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/reducers/auth";
 
 function Signin() {
+  const dispatch = useDispatch();
   const navigation = useNavigate();
   function processLogin(e) {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    if (email === "admin@mail.com" && password === "1234") {
-      navigation("/");
-    } else {
-      alert("data anda salah");
-    }
+    // if (email === "admin@mail.com" && password === "1234") {
+    //   navigation("/");
+    // } else {
+    //   alert("data anda salah");
+    // }
+    const dataForm = new URLSearchParams();
+    dataForm.append("email", email);
+    dataForm.append("password", password);
+
+    fetch("https://api-dummy.fahrul.id/auth/login", {
+      method: "POST",
+      body: dataForm,
+    }).then((response) => {
+      response.json().then((data) => {
+        if (data.success) {
+          const token = data.results.token;
+          dispatch(login(token));
+          navigation("/");
+        } else {
+          alert(data.message);
+        }
+      });
+    });
   }
 
   const [pass, setPass] = useState("password");
@@ -63,7 +84,11 @@ function Signin() {
                 id="password"
                 placeholder="Password"
               />
-              <button type="button" onMouseDown={showPassword} onMouseUp={hiddenPassword}>
+              <button
+                type="button"
+                onMouseDown={showPassword}
+                onMouseUp={hiddenPassword}
+              >
                 {icon}
               </button>
             </div>

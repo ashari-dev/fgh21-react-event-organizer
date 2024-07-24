@@ -11,6 +11,8 @@ import MyBooking from "./pages/MyBooking";
 import MyWishlist from "./pages/MyWishlist";
 import CreateEvent from "./pages/CreateEvent";
 import Signup from "./pages/Signup";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const route = createBrowserRouter([
   {
@@ -61,9 +63,11 @@ const route = createBrowserRouter([
 
 function App() {
   return (
-    <section className="bg-[#F4F7FF]">
-      <RouterProvider router={route} />
-    </section>
+    <Provider store={store}>
+      <section className="bg-[#F4F7FF]">
+        <RouterProvider router={route} />
+      </section>
+    </Provider>
   );
 }
 

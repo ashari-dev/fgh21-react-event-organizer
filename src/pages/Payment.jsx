@@ -24,18 +24,25 @@ function Payment() {
             </div>
             <div className="flex flex-col gap-10">
               <div className="flex gap-5">
-                <input type="radio" checked />
+                <input
+                  name="payment"
+                  id="card"
+                  type="radio"
+                />
                 <div className="h-11 w-11 bg-[#884DFF33] rounded-lg flex items-center justify-center">
                   <FaCreditCard className="text-[#884DFF]" />
                 </div>
-                <div className="flex items-center justify-between w-[60%] ">
+                <label
+                  htmlFor="card"
+                  className="flex items-center justify-between w-[60%]"
+                >
                   <span className="font-semibold text-sm text-[#373A42]">
                     Card
-                  </span>{" "}
+                  </span>
                   <FaChevronUp className="text-[#979797]" />
-                </div>
+                </label>
               </div>
-              <div className="flex ml-[5%] items-center gap-8 mt-[-20px]">
+              <div className=" flex ml-[5%] items-center gap-8 mt-[-20px]">
                 <img src={atmCatd} alt="atm" className="w-auto" />
                 <button className="h-11 w-11 border-2 border-[#3366ff] border-dashed rounded-xl text-[#3366ff] text-3xl ">
                   +
@@ -43,40 +50,51 @@ function Payment() {
               </div>
 
               <div className="flex gap-5">
-                <input type="radio" />
+                <input name="payment" id="bank" type="radio" />
                 <div className="h-11 w-11 bg-[#FC105533] rounded-lg flex items-center justify-center">
                   <FaBuildingColumns className="text-[#FC1055]" />
                 </div>
-                <div className="flex items-center justify-between w-[60%]">
+                <label
+                  htmlFor="bank"
+                  className="flex items-center justify-between w-[60%]"
+                >
                   <span className="font-semibold text-sm text-[#373A42]">
                     Bank Transfer
-                  </span>{" "}
+                  </span>
                   <FaChevronDown className="text-[#979797]" />
-                </div>
+                </label>
               </div>
+
               <div className="flex gap-5">
-                <input type="radio" />
+                <input name="payment" id="retail" type="radio" />
                 <div className="h-11 w-11 bg-[#FF890033] rounded-lg flex items-center justify-center">
                   <FaShop className="text-[#FF8900]" />
                 </div>
-                <div className="flex items-center justify-between w-[60%]">
+                <label
+                  htmlFor="retail"
+                  className="flex items-center justify-between w-[60%]"
+                >
                   <span className="font-semibold text-sm text-[#373A42]">
                     Retail
                   </span>{" "}
                   <FaChevronDown className="text-[#979797]" />
-                </div>
+                </label>
               </div>
+
               <div className="flex gap-5">
-                <input type="radio" />
+                <input name="payment" id="emoney" type="radio" />
                 <div className="h-11 w-11 bg-[#3366FF33] rounded-lg flex items-center justify-center">
                   <FaDollarSign className="text-[#3366FF]" />
                 </div>
-                <div className="flex items-center justify-between w-[60%]">
+                <label
+                  htmlFor="emoney"
+                  className="flex items-center justify-between w-[60%]"
+                >
                   <span className="font-semibold text-sm text-[#373A42]">
                     E-Money
                   </span>{" "}
                   <FaChevronDown className="text-[#979797]" />
-                </div>
+                </label>
               </div>
             </div>
           </div>

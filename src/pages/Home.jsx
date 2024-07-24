@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavbarBtn from "../component/NavbarBtn";
 import imgHeader from "../assets/img/hero.png";
 import Footer from "../component/Footer";
@@ -6,8 +6,14 @@ import EventHome from "../component/EventHome";
 import Location from "../component/LocationHome";
 import Category from "../component/CategoryHome";
 import Partner from "../component/Partner";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addEvent } from "../redux/reducers/event";
 
 function Home() {
+  const endpoint = "https://api-dummy.fahrul.id/events";
+  const event = useSelector((state) => state.event.dataEvent);
+  const dispatch = useDispatch();
   const data = [
     {
       id: 1,
@@ -46,6 +52,13 @@ function Home() {
       img: "https://i.pinimg.com/564x/0f/4e/56/0f4e563789c7e3a6395ae333f6d7df54.jpg",
     },
   ];
+
+  useEffect(() => {
+    (async () => {
+      const data = await axios.get(endpoint);
+      dispatch(addEvent(data.data.results))
+    })();
+  }, []);
   return (
     <div>
       <NavbarBtn />
@@ -54,9 +67,9 @@ function Home() {
           <img src={imgHeader} alt="img" className="w-auto" />
         </section>
 
-        <EventHome data={data}/>
+        <EventHome data={event} />
         <Location />
-        <Category data={data}/>
+        <Category data={event} />
         <Partner />
         <Footer />
       </div>
