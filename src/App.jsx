@@ -64,7 +64,7 @@ const route = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-      <section className="bg-[#F4F7FF]">
+      <section className="bg-[#f7aac61f]">
         <RouterProvider router={route} />
       </section>
     </Provider>

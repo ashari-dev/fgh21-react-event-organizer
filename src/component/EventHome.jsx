@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function EventHome(props) {
   return (
     <section className="flex flex-col items-center gap-10">
-      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold flex before:content-['\2014'] gap-1">
+      <div className="bg-[#fb783c7a] rounded-full text-[#FB773C] px-9 font-semibold flex before:content-['\2014'] gap-1">
         Event
       </div>
       <div className="text-4xl font-bold">Events For You</div>
@@ -39,19 +39,19 @@ function EventHome(props) {
             <Link to={"/event/"} key={i.id}>
               <div className="flex flex-col flex-shrink-0 h-[376px] w-[260px] overflow-hidden bg-red-700 rounded-3xl relative">
                 <img
-                  src={"https://api-dummy.fahrul.id/" + i.picture}
+                  src={"https://wsw6zh-8888.csb.app" + i.picture}
                   alt={i.name}
                   className="w-auto h-[435px] absolute brightness-50"
                 />
                 <div className="relative p-7 text-white  flex flex-col gap-5 h-full justify-end">
-                  <div className="text-sm font-semibold">{i.time}</div>
+                  <div className="text-sm font-semibold">{i.time.split('T')[0]}</div>
                   <div className="text-2xl font-bold">{i.title}</div>
                   {/* <Attendees  /> */}
                   <div className="flex">
                   {i.attendees.map((attend) => {
                     return (
                       <div key={attend.id} className="relative rounded-full h-7 w-7 border overflow-hidden border-white mr-[-10px]">
-                        <img src={"https://api-dummy.fahrul.id/" + attend.picture} alt="attend" className="w-full" />
+                        <img src={"https://wsw6zh-8888.csb.app" + attend.picture} alt="attend" className="w-full" />
                       </div>
                     );
                   })}
@@ -66,7 +66,7 @@ function EventHome(props) {
         <button className="h-11 w-11 rounded-xl text-[#C1C5D0] justify-center flex items-center shadow-md">
           <FaArrowLeft />
         </button>
-        <button className="h-11 w-11 rounded-xl bg-[#3366FF] text-white justify-center flex items-center shadow-md">
+        <button className="h-11 w-11 rounded-xl bg-[#180161] text-white justify-center flex items-center shadow-md">
           <FaArrowRight />
         </button>
       </div>

@@ -44,7 +44,7 @@ function Payment() {
               </div>
               <div className=" flex ml-[5%] items-center gap-8 mt-[-20px]">
                 <img src={atmCatd} alt="atm" className="w-auto" />
-                <button className="h-11 w-11 border-2 border-[#3366ff] border-dashed rounded-xl text-[#3366ff] text-3xl ">
+                <button className="h-11 w-11 border-2 border-[#180161] border-dashed rounded-xl text-[#180161] text-3xl ">
                   +
                 </button>
               </div>
@@ -105,22 +105,22 @@ function Payment() {
             <div className="flex flex-col gap-3">
               <h3 className="text-[#373A42] text-sm font-bold flex justify-between">
                 Event
-                <span className="text-[#3366ff]">
+                <span className="text-[#180161]">
                   Sights & Sounds Exhibition
                 </span>
               </h3>
               <h3 className="text-[#373A42] text-sm font-bold flex justify-between">
-                Ticket Section<span className="text-[#3366ff]">VIP</span>
+                Ticket Section<span className="text-[#180161]">VIP</span>
               </h3>
               <h3 className="text-[#373A42] text-sm font-bold flex justify-between">
-                Quantity<span className="text-[#3366ff]">2</span>
+                Quantity<span className="text-[#180161]">2</span>
               </h3>
               <h3 className="text-[#373A42] text-sm font-bold flex justify-between">
-                Total Payment<span className="text-[#3366ff]">$70</span>
+                Total Payment<span className="text-[#180161]">$70</span>
               </h3>
             </div>
             <Link to={"/my-booking"} className="w-full">
-              <button className="bg-[#3366ff] rounded-2xl h-14 w-full shadow-xl font-semibold text-white">
+              <button className="bg-[#180161] rounded-2xl h-14 w-full shadow-xl font-semibold text-white">
                 Payment
               </button>
             </Link>

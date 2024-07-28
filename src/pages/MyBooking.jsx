@@ -40,7 +40,7 @@ function MyBooking() {
           <div className="bg-white p-16 rounded-3xl flex-1 w-full flex flex-col gap-12 ">
             <div className="text-xl font-bold flex justify-between items-center">
               My Booking{" "}
-              <button className="bg-[#EAF1FF] h-[50px] w-[125px] flex items-center justify-center text-sm gap-3 text-[#3366ff] rounded-xl">
+              <button className="bg-[#EAF1FF] h-[50px] w-[125px] flex items-center justify-center text-sm gap-3 text-[#180161] rounded-xl">
                 <FaCalendar />
                 March
               </button>
@@ -67,7 +67,7 @@ function MyBooking() {
                           <span className="text-xs text[#373A42BF]">
                             {i.time}
                           </span>
-                          <a className="text-xs text-[#3366ff] mt-1">Detail</a>
+                          <a className="text-xs text-[#180161] mt-1">Detail</a>
                         </div>
                       </div>
                     </div>

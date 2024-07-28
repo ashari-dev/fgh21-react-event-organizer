@@ -55,7 +55,7 @@ function MyWishlist() {
                       <div className="flex flex-col gap-3 w-full">
                         <h2 className="flex justify-between border-b-2 w-full text-2xl font-semibold text-[#373A42]">
                           {i.title}
-                          <FaRegHeart className="text-[#3366ff]" />
+                          <FaRegHeart className="text-[#180161]" />
                         </h2>
                         <div className="flex flex-col gap-2">
                           <span className="text-xs text[#373A42BF]">

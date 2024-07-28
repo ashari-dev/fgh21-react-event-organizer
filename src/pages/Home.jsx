@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addEvent } from "../redux/reducers/event";
 
 function Home() {
-  const endpoint = "https://api-dummy.fahrul.id/events";
+  const endpoint = "https://wsw6zh-8888.csb.app/events";
   const event = useSelector((state) => state.event.dataEvent);
   const dispatch = useDispatch();
   const data = [
@@ -63,8 +63,7 @@ function Home() {
     <div>
       <NavbarBtn />
       <div className="flex flex-col gap-[100px]">
-        <section className="bg-[#3366FF] bg-[url('../assets/img/bg1.png')] bg-no-repeat bg-cover flex justify-end items-center md:h-[660px]">
-          <img src={imgHeader} alt="img" className="w-auto" />
+        <section className="bg-[#180161] bg-[url('../assets/img/bg1.png')] bg-no-repeat bg-cover flex justify-end items-center md:h-[660px]">
         </section>
 
         <EventHome data={event} />

@@ -6,7 +6,7 @@ import Attendees from "./Attendees";
 function Category(props) {
   return (
     <section className="flex flex-col items-center gap-10 pt-20">
-      <div className="bg-[#FF3D7140] rounded-full text-[#FF3D71] px-9 font-semibold flex before:content-['\2014'] gap-1">
+      <div className="bg-[#fb783c7a] rounded-full text-[#FB773C] px-9 font-semibold flex before:content-['\2014'] gap-1">
         Category
       </div>
       <div className="text-4xl font-bold">Browse Events By Category</div>
@@ -28,16 +28,16 @@ function Category(props) {
             return (
               <div
                 key={`event-${i.id}`}
-                className="h-[350px] flex-shrink-0 w-[300px] bg-[#3366FF] rounded-3xl overflow-hidden relative "
+                className="h-[350px] flex-shrink-0 w-[300px] bg-[#180161] rounded-3xl overflow-hidden relative "
               >
-                <img src={"https://api-dummy.fahrul.id/" + i.picture} alt="Event" className="absolute bottom-40 w-full" />
+                <img src={"https://wsw6zh-8888.csb.app" + i.picture} alt="Event" className="absolute bottom-40 w-full" />
                 <div className="absolute top-1/2 left-5" >
                   {/* <Attendees /> */}
                   <div className="flex">
                   {i.attendees.map((attend) => {
                     return (
                       <div key={attend.id} className="relative rounded-full h-7 w-7 border overflow-hidden border-white mr-[-10px]">
-                        <img src={"https://api-dummy.fahrul.id/" + attend.picture} alt="attend" className="w-full" />
+                        <img src={"https://wsw6zh-8888.csb.app" + attend.picture} alt="attend" className="w-full" />
                       </div>
                     );
                   })}
@@ -45,7 +45,7 @@ function Category(props) {
                 </div>
                 <div className="flex flex-col text-white pl-5 pb-5 justify-end h-full gap-5">
                   <div className="text-sm font-semibold">
-                    {i.time}
+                    {i.time.split('T')[0]}
                   </div>
                   <div className="text-2xl font-bold">
                     {i.title}
@@ -55,7 +55,7 @@ function Category(props) {
             );
           })}
         </div>
-        <button className="hidden h-11 w-11 rounded-xl bg-[#3366FF] text-white justify-center md:flex items-center shadow-md">
+        <button className="hidden h-11 w-11 rounded-xl bg-[#180161] text-white justify-center md:flex items-center shadow-md">
           <FaArrowRight />
         </button>
       </div>
@@ -63,7 +63,7 @@ function Category(props) {
         <button className=" h-11 w-11 rounded-xl text-[#C1C5D0] justify-center flex items-center shadow-md">
           <FaArrowLeft />
         </button>
-        <button className=" h-11 w-11 rounded-xl bg-[#3366FF] text-white justify-center flex items-center shadow-md">
+        <button className=" h-11 w-11 rounded-xl bg-[#180161] text-white justify-center flex items-center shadow-md">
           <FaArrowRight />
         </button>
       </div>

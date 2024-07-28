@@ -188,11 +188,11 @@ function Booking() {
             <div className="flex flex-col gap-4">
               <div className="text-sm font-bold flex justify-between text-[#373A42]">
                 Ticket Section
-                <span className="text-[#3355ff]">{dataSection}</span>
+                <span className="text-[#180161]">{dataSection}</span>
               </div>
               <div className="text-sm font-bold flex justify-between text-[#373A42]">
                 Quantity
-                <span className="text-[#3355ff]">
+                <span className="text-[#180161]">
                   {reg === 0 && vip === 0 && vvip === 0
                     ? "-"
                     : `${reg + vip + vvip}`}
@@ -200,7 +200,7 @@ function Booking() {
               </div>
               <div className="text-sm font-bold flex justify-between text-[#373A42]">
                 Total Payment
-                <span className="text-[#3355ff]">
+                <span className="text-[#180161]">
                   {reg === 0 && vip === 0 && vvip === 0
                     ? "-"
                     : `$${reg * 15 + vip * 35 + vvip * 50}`}
@@ -208,7 +208,7 @@ function Booking() {
               </div>
             </div>
             <Link to={"/payment"}>
-              <button className="bg-[#3366ff] h-12 w-full md:w-[315px] rounded-2xl text-white font-bold shadow-xl">
+              <button className="bg-[#180161] h-12 w-full md:w-[315px] rounded-2xl text-white font-bold shadow-xl">
                 Checkout
               </button>
             </Link>

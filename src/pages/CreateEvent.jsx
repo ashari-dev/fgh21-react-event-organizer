@@ -53,7 +53,7 @@ function CreateEvent() {
               Create Event
               <button
                 onClick={modalCreate}
-                className="bg-[#EAF1FF] h-[50px] w-[125px] flex items-center justify-center text-sm gap-3 text-[#3366ff] rounded-xl"
+                className="bg-[#EAF1FF] h-[50px] w-[125px] flex items-center justify-center text-sm gap-3 text-[#180161] rounded-xl"
               >
                 Create
               </button>
@@ -80,9 +80,9 @@ function CreateEvent() {
                           {i.time}
                         </span>
                         <div className="flex gap-3">
-                          <a className="text-xs text-[#3366ff] mt-1">Detail</a>
-                          <a className="text-xs text-[#3366ff] mt-1">Update</a>
-                          <a className="text-xs text-[#3366ff] mt-1">Delete</a>
+                          <a className="text-xs text-[#180161] mt-1">Detail</a>
+                          <a className="text-xs text-[#180161] mt-1">Update</a>
+                          <a className="text-xs text-[#180161] mt-1">Delete</a>
                         </div>
                       </div>
                     </div>
@@ -194,7 +194,7 @@ function CreateEvent() {
               ></textarea>
             </div>
             <div className="md:col-span-2 flex md:justify-end">
-              <button className="h-[61px] w-full md:w-[315px] bg-[#3366ff] rounded-2xl text-white font-semibold shadow-xl">
+              <button className="h-[61px] w-full md:w-[315px] bg-[#180161] rounded-2xl text-white font-semibold shadow-xl">
                 Save
               </button>
             </div>

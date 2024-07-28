@@ -1,12 +1,12 @@
 import React from "react";
-import { FaTicket } from "react-icons/fa6";
+import { FaXmarksLines } from "react-icons/fa6";
 
-function Logo(){
-  return(
+function Logo() {
+  return (
     <div className="flex items-center gap-1 ">
-      <FaTicket className="text-5xl text-[#3366FF] rotate-[135deg]"/>
-      <div className="text-2xl font-bold text-[#3366FF]">We<span className="text-[#FC1055]">tick</span></div>
+      <FaXmarksLines className="text-4xl text-[#EB3678] rotate-90" />
+      <div className="text-2xl font-bold text-[#EB3678]">Logo</div>
     </div>
-  )
+  );
 }
-export default Logo
+export default Logo;

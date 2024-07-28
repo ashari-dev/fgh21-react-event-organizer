@@ -9,7 +9,7 @@ import solo from "../assets/img/solo.png";
 
 function Location() {
   return (
-    <section className="bg-[#3366FF] bg-[url('../assets/img/bg2.png')] bg-no-repeat bg-cover md:m-12 m-5 px-16 py-20 flex flex-col gap-12 rounded-3xl text-white">
+    <section className="bg-[#180161] bg-[url('../assets/img/bg2.png')] bg-no-repeat bg-cover md:m-12 m-5 px-16 py-20 flex flex-col gap-12 rounded-3xl text-white">
       <div className="text-xl font-semibold bg-[#FFFFFF40] w-32 flex justify-center rounded-full before:content-['\2014'] gap-1">Location</div>
       <div className="flex flex-wrap gap-20 justify-center md:justify-start">
         <div className="w-[230px] text-4xl font-bold">Discover Events Near You</div>
@@ -36,7 +36,7 @@ function Location() {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="h-12 w-64 bg-white text-[#3366FF] rounded-2xl font-semibold text-base">See All</button>
+        <button className="h-12 w-64 bg-white text-[#180161] rounded-2xl font-semibold text-base">See All</button>
       </div>
     </section>
   );

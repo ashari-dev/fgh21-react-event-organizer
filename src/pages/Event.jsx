@@ -32,13 +32,13 @@ function Event() {
             </div>
             <div className="flex flex-col gap-5 md:flex-row md:gap-0 justify-between">
               <div className="flex items-center gap-3">
-                <FaLocationDot className="text-[#FC1055]" />
+                <FaLocationDot className="text-[#FB773C]" />
                 <span className="font-semibold text-[#373A42]">
                   Jakarta, Indonesia
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <FaClock className="text-[#FC1055]" />
+                <FaClock className="text-[#FB773C]" />
                 <span className="font-semibold text-[#373A42]">
                   Wed, 15 Nov, 4:00 PM
                 </span>
@@ -58,7 +58,7 @@ function Event() {
                 After his controversial art exhibition "Tear and Consume" back
                 in November 2018, in which guests were invited to tear up…
               </p>
-              <a className="text-xs font-semibold text-[#3366FF]">Read More</a>
+              <a className="text-xs font-semibold text-[#180161]">Read More</a>
               </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -68,7 +68,7 @@ function Event() {
               </div>
             </div>
             <Link to={'/booking'}>
-            <button className="bg-[#3366FF] h-14 md:w-[315px] w-full rounded-2xl text-white font-bold shadow-xl">Payment</button>
+            <button className="bg-[#180161] h-14 md:w-[315px] w-full rounded-2xl text-white font-bold shadow-xl">Payment</button>
             </Link>
           </div>
         </div>

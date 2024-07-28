@@ -5,6 +5,10 @@ import imgHeader from "../assets/img/hero.png";
 import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
+  const [alert1, setAlert1] = useState(0)
+  const [alert2, setAlert2] = useState(0)
+  const [alert3, setAlert3] = useState(0)
+  const [alert4, setAlert4] = useState(0)
   const navigation = useNavigate();
 
   function register(e) {
@@ -13,16 +17,27 @@ function Signup() {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const cPassword = e.target.cPassword.value;
-
     if (fullname === "" || email === "" || password === "") {
-      alert("data tidak boleh kosong!!!");
+      setAlert1(1)
+      setAlert2(0)
+      setAlert3(0)
+      setAlert4(0)
     } else {
       if (fullname.length < 4) {
-        alert("Fullname tidak boleh kurang dari 8 karakter!!!");
+        setAlert2(1)
+        setAlert1(0)
+        setAlert3(0)
+        setAlert4(0)
       } else if (password.length < 8) {
-        alert("Password harus lebih dari 8 karakter!!!");
+        setAlert3(1)
+        setAlert1(0)
+        setAlert2(0)
+        setAlert4(0)
       } else if (password !== cPassword) {
-        alert("Confirm password tidak sama dengan password!!!");
+        setAlert4(1)
+        setAlert3(0)
+        setAlert2(0)
+        setAlert1(0)
       } else {
         navigation("/login");
       }
@@ -45,8 +60,7 @@ function Signup() {
   }
   return (
     <div className="flex">
-      <div className=" flex-1 md:flex justify-center items-center bg-[#3366FF] ">
-        <img src={imgHeader} alt="img" className="h-auto w-auto" />
+      <div className=" flex-1 md:flex justify-center items-center bg-[#180161] ">
       </div>
       <div className="flex flex-col w-full md:w-[500px] gap-12 pt-52 pb-52 pl-20 pr-20">
         <div>
@@ -56,12 +70,16 @@ function Signup() {
           <h2 className="text-2xl font-bold">Sign up</h2>
           <h4 className="text-xs">
             Already have an account?{" "}
-            <Link className="text-[#3366ff] font-semibold" to={"/login"}>
+            <Link className="text-[#180161] font-semibold" to={"/login"}>
               Log In
             </Link>{" "}
           </h4>
         </div>
         <div className="md:w-[350px]">
+        {alert1 ?<div className="bg-red-700 text-white py-2 px-3 rounded-md flex justify-between mb-3">data tidak boleh kosong!!! <button onClick={()=>setAlert1(0)}>x</button></div>:''}
+        {alert2 ?<div className="bg-red-700 text-white py-2 px-3 rounded-md flex justify-between mb-3">Fullname tidak boleh kurang dari 4 karakter!!! <button onClick={()=>setAlert2(0)}>x</button></div>:''}
+        {alert3 ?<div className="bg-red-700 text-white py-2 px-3 rounded-md flex justify-between mb-3">Password harus lebih dari 8 karakter!!! <button onClick={()=>setAlert3(0)}>x</button></div>:''}
+        {alert4 ?<div className="bg-red-700 text-white py-2 px-3 rounded-md flex justify-between mb-3">Confirm password tidak sama dengan password!!! <button onClick={()=>setAlert4(0)}>x</button></div>:''}
           <form onSubmit={register} className="flex flex-col gap-3">
             <div>
               <input
@@ -113,10 +131,10 @@ function Signup() {
                 {icon}
               </button>
             </div>
-            <div className="text-[#3366FF]  text-sm">
+            <div className="text-[#180161]  text-sm">
               <input type="checkbox" /> Accept terms and condition
             </div>
-            <button className="rounded-2xl h-12 w-full pl-5 bg-[#3366FF] text-white font-semibold shadow-md">
+            <button className="rounded-2xl h-12 w-full pl-5 bg-[#180161] text-white font-semibold shadow-md">
               Sign up
             </button>
           </form>

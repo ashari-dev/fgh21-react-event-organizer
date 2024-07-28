@@ -65,7 +65,7 @@ function ChangePassword() {
                   </tr>
                 </table>
                 
-                  <button className="h-[60px] w-full font-semibold text-white bg-[#3366ff] rounded-2xl shadow-xl">
+                  <button className="h-[60px] w-full font-semibold text-white bg-[#180161] rounded-2xl shadow-xl">
                     Update
                   </button>
               </form>

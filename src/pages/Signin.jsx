@@ -5,24 +5,24 @@ import imgHeader from "../assets/img/hero.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/reducers/auth";
+import { addData } from "../redux/reducers/profile";
+import Loading from "../component/Loading";
 
 function Signin() {
+  const [warning, setWarning] = useState(0);
+  const [loading, setLoading] = useState(0);
   const dispatch = useDispatch();
   const navigation = useNavigate();
   function processLogin(e) {
     e.preventDefault();
+    setLoading(1);
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // if (email === "admin@mail.com" && password === "1234") {
-    //   navigation("/");
-    // } else {
-    //   alert("data anda salah");
-    // }
+    
     const dataForm = new URLSearchParams();
     dataForm.append("email", email);
     dataForm.append("password", password);
-
-    fetch("https://api-dummy.fahrul.id/auth/login", {
+    fetch("https://wsw6zh-8888.csb.app/auth/login", {
       method: "POST",
       body: dataForm,
     }).then((response) => {
@@ -30,9 +30,20 @@ function Signin() {
         if (data.success) {
           const token = data.results.token;
           dispatch(login(token));
-          navigation("/");
+          (async () => {
+            const res = await fetch("https://wsw6zh-8888.csb.app/profile", {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            });
+            const data = await res.json();
+            dispatch(addData(data));
+            setLoading(0);
+            navigation("/");
+          })();
         } else {
-          alert(data.message);
+          setLoading(0);
+          setWarning(1);
         }
       });
     });
@@ -54,8 +65,9 @@ function Signin() {
   }
   return (
     <div className="flex">
-      <div className=" flex-1 md:flex justify-center items-center bg-[#3366FF] ">
-        <img src={imgHeader} alt="img" className="h-auto w-auto" />
+      {loading ? <Loading /> : ""}
+
+      <div className=" flex-1 md:flex justify-center items-center bg-[#180161] ">
       </div>
       <div className="flex flex-col w-full md:w-[500px] gap-12 pt-52 pb-52 pl-20 pr-20">
         <div>
@@ -66,6 +78,21 @@ function Signin() {
           <h4 className="text-xs">Hi, Welcome back to Urticket! </h4>
         </div>
         <div className="md:w-[350px]">
+          {warning ? (
+            <div className="bg-red-700 text-white py-2 px-3 rounded-md flex justify-between mb-3">
+              Data yang anda masukkan salah{" "}
+              <button
+                onClick={() => {
+                  setWarning(0);
+                }}
+              >
+                x
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
+
           <form onSubmit={processLogin} className="flex flex-col gap-3">
             <div>
               <input
@@ -92,19 +119,19 @@ function Signin() {
                 {icon}
               </button>
             </div>
-            <div className="text-[#3366FF] font-bold text-end">
+            <div className="text-[#180161] font-bold text-end">
               Forget Password ?
             </div>
-            <button className="rounded-2xl h-12 w-full pl-5 bg-[#3366FF] text-white font-semibold shadow-md">
+            <button className="rounded-2xl h-12 w-full pl-5 bg-[#180161] text-white font-semibold shadow-md">
               Sign in
             </button>
             <div className="flex flex-col gap-3 items-center">
               <p className="text-[#373A42] text-sm">or sign in with</p>
               <div className="flex gap-5">
-                <button className="flex items-center justify-center h-[52px] w-[95px] border border-[#3366FF] rounded-xl">
+                <button className="flex items-center justify-center h-[52px] w-[95px] border border-[#180161] rounded-xl">
                   <FaFacebook className="text-xl" />
                 </button>
-                <button className="flex items-center justify-center h-[52px] w-[95px] border border-[#3366FF] rounded-xl">
+                <button className="flex items-center justify-center h-[52px] w-[95px] border border-[#180161] rounded-xl">
                   <FaGoogle className="text-xl" />
                 </button>
               </div>

@@ -10,6 +10,7 @@ const event = createSlice({
     addEvent: (state, action) => {
       state.dataEvent = [...action.payload];
     },
+    
   },
 });
 export const {addEvent} = event.actions
